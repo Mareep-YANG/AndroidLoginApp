@@ -15,7 +15,7 @@
 
 ### 数据层
 - [Room数据库使用](04_Room数据库使用.md) - SQLite ORM框架和本地数据存储
-- [SharedPreferences详解](待补充.md) - 轻量级键值对存储
+- [SharedPreferences详解](08_SharedPreferences详解.md) - 轻量级键值对存储
 - [Repository模式](待补充.md) - 数据层抽象和访问模式
 
 ### UI开发
@@ -87,3 +87,4 @@ A: 解决方案
 | 2025-11-24 | 05_Intent详解 | 显式Intent和隐式Intent详解 | 已创建 |
 | 2025-11-24 | 06_Activity启动模式与任务栈 | 4种启动模式和任务栈管理 | 已创建 |
 | 2025-11-24 | 07_Android常见布局 | 传统布局系统和Compose布局对比 | 已创建 |
+| 2025-11-24 | 08_SharedPreferences详解 | 轻量级键值存储和使用模式 | 已创建 |

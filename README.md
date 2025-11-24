@@ -4,12 +4,12 @@
 
 ## 项目概述
 
-**AndroidLoginApp** 是基于Jetpack Compose和Kotlin构建的Android应用示例，展示登录认证和用户个人中心的实现。本项目作为Android原生开发学习的Demo项目。
+**AndroidLoginApp** 是基于传统 XML 布局和 Kotlin 构建的 Android 应用示例，展示登录认证和用户个人中心的实现。本项目作为 Android 原生开发学习的 Demo 项目。
 
 - **包名**: `cn.mareep.androidloginapp`
 - **最低API**: 24 (Android 7.0)
 - **目标API**: 36 (Android 15)
-- **UI框架**: Jetpack Compose + Material 3
+- **UI框架**: 传统 XML 布局 + View 系统 (非 Jetpack Compose)
 - **语言**: Kotlin (JVM Target 11)
 - **构建系统**: Gradle 8.13.1 (Kotlin DSL)
 
@@ -59,17 +59,18 @@ app/
 ## 技术栈
 
 ### UI框架
-- **Jetpack Compose**: 声明式UI框架
-- **Material 3**: Material Design 3组件库
-- **Navigation Compose**: 页面导航
+- **XML 布局**: 传统 Android 布局系统，使用 XML 文件定义 UI
+- **View 系统**: Android 原生 View 组件（Button、EditText、TextView 等）
+- **ConstraintLayout**: 灵活的约束布局容器
+- **Material Components**: Material Design 组件支持
 
 ### 数据层
 - **Room**: SQLite数据库ORM框架
 - **SharedPreferences**: 轻量级键值存储
-- **DataStore**: (可选) 新一代数据存储
 
 ### 其他关键库
 - **ViewModel & LiveData**: MVVM架构支持
+- **TextWatcher**: 输入框文本监听
 - **Kotlin Coroutines**: 异步编程
 - **AndroidX**: 现代化Android库
 
@@ -103,26 +104,26 @@ app/
 
 - **代码风格**: 遵循Kotlin官方代码风格 (`kotlin.code.style=official`)
 - **包命名**: `cn.mareep.androidloginapp`
-- **UI层**: 使用Compose Composable函数定义UI
+- **UI层**: 使用 XML 布局文件定义 UI，通过 findViewById 获取 View 引用
 - **数据层**: 通过Room和SharedPreferences持久化数据
 - **架构**: MVVM模式，使用ViewModel分离UI和业务逻辑
 
 ## AI_Learning目录
 
-`AI_Learning/` 目录存放学习过程中的知识卡片（Knowledge Cards），记录每个技术点的深入理解和实现细节。
+`AI_Learning/` 目录存放学习过程中的知识卡片（Knowledge Cards）。
 
 ## AI使用说明
 
-本部分记录项目中使用AI Coding或Vibe Coding技术的情况，标明具体的应用场景和技术点。
-
-### 初始化阶段 (2025-11-24)
+本部分记录项目中使用AI的情况，标明具体的应用场景和技术点。
 
 | 序号 | 项目部分 | 使用技术 | 描述 |
 |------|--------|--------|------|
-| 1 | README.md | AI Coding | 生成项目文档、功能需求说明、项目结构和技术栈梳理 |
-| 2 | CLAUDE.md | AI Coding | 更新项目指导文档，包括架构设计、实现清单和注意事项 |
-| 3 | AI_Learning系统 | AI Coding | 创建知识卡片库框架、模板和索引 |
-| 4 | 知识卡片 - Activity和应用程序结构 | Vibe Coding | 讲解单Activity vs 多Activity架构、返回栈概念、现代Android设计趋势 |
+| 1 | README.md | Claude Code | 生成项目文档、功能需求说明、项目结构和技术栈梳理 |
+| 2 | CLAUDE.md | Claude Code | 更新项目指导文档，包括架构设计、实现清单和注意事项 |
+| 3 | AI_Learning系统 | Claude Code | 创建知识卡片库框架、模板和索引 |
+| 4 | 知识卡片 - Activity和应用程序结构 | Claude Code | 讲解单Activity vs 多Activity架构、返回栈概念、现代Android设计趋势 |
+| 5 | CLAUDE.md & README.md | Claude Code | 修正UI框架描述：从 Jetpack Compose 改为传统 XML 布局 + View 系统 |
+| 6 | DatabaseHelper & LoginActivity | Claude Code | 实现用户数据库：SQLiteOpenHelper、用户表结构、SHA-256密码哈希、预埋默认账户、登录验证逻辑 |
 
 ## 许可证
 

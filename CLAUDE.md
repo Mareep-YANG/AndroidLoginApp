@@ -9,7 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Package**: `cn.mareep.androidloginapp`
 - **Minimum SDK**: 24 (Android 7.0)
 - **Target SDK**: 36 (Android 15)
-- **UI Framework**: Jetpack Compose with Material 3
+- **UI Framework**: 传统 XML 布局 + View 系统 (非 Jetpack Compose)
 - **Language**: Kotlin (JVM target 11)
 - **Build System**: Gradle with Kotlin DSL (Gradle 8.13.1)
 - **Architecture**: MVVM pattern with ViewModel and Repository
@@ -137,19 +137,16 @@ app/
 - **Separation of Concerns**: UI layer only handles presentation, data layer handles persistence
 
 ### UI Architecture
-- **Jetpack Compose**: Declarative UI framework. All UI is defined in Kotlin with composable functions.
-- **Material 3 Theme**: The app uses Material Design 3 with dynamic color support on Android 12+.
-  - Light and dark color schemes defined in `Theme.kt`
-  - Theme adapts to system preferences automatically via `isSystemInDarkTheme()`
-  - Dynamic color on Android 12+ uses system wallpaper colors
-- **Navigation Compose**: Handle screen transitions between LoginScreen and ProfileScreen
+- **传统 XML 布局**: 使用 XML 文件定义 UI 布局，位于 `res/layout/` 目录
+- **View 系统**: 使用 Android 原生 View 组件（Button、EditText、TextView 等）
+- **ConstraintLayout**: 主要布局容器，支持复杂的约束关系
+- **findViewById**: 通过 ID 获取 View 引用并操作
 
 ### Activity Structure
-- **MainActivity**: Single activity with Compose-based navigation
-  - Uses `ComponentActivity` with Compose integration
-  - Calls `enableEdgeToEdge()` for edge-to-edge display
-  - Sets up navigation graph for LoginScreen and ProfileScreen
-  - Wrapped with `AndroidLoginAppTheme` for theming
+- **LoginActivity**: 登录页面 Activity
+  - 使用 `setContentView(R.layout.activity_login)` 加载布局
+  - 通过 `findViewById` 获取 View 引用
+  - 使用 `TextWatcher` 监听输入变化实现实时验证
 
 ### Data Layer
 - **Room Database**:
@@ -165,13 +162,12 @@ app/
 
 ### Dependencies
 All dependencies are managed through version catalogs in `gradle/libs.versions.toml`:
-- **Compose BOM**: Centralized version management for Compose libraries
-- **Material 3**: `androidx.compose.material3` for Material Design components
+- **ConstraintLayout**: `androidx.constraintlayout` 用于复杂布局
 - **Room**: `androidx.room` for database persistence
 - **Lifecycle**: `androidx.lifecycle` for ViewModel and LiveData
-- **Navigation Compose**: `androidx.navigation:navigation-compose` for screen navigation
-- **Testing**: JUnit 4, Espresso, and Compose testing libraries
+- **Testing**: JUnit 4, Espresso testing libraries
 - **Core Libraries**: androidx.core, androidx.activity
+- **AppCompat**: `androidx.appcompat` 兼容性支持
 
 ## Important Configuration Notes
 
@@ -187,9 +183,9 @@ All dependencies are managed through version catalogs in `gradle/libs.versions.t
 - If Gradle sync fails, ensure Java 11+ is set in Android Studio preferences
 - Run `./gradlew clean` before rebuilding to clear stale artifacts
 
-### Compose Preview
-- Composable functions marked with `@Preview` can be viewed in Android Studio's design preview
-- Use `@Preview` with `showBackground = true` to see background in previews
+### XML 布局预览
+- XML 布局文件可在 Android Studio 的 Design/Split 视图中预览
+- 使用 `tools:text` 属性在预览中显示占位文本
 
 ### Device Requirements
 - Minimum SDK 24 supports Android 7.0+
@@ -227,10 +223,10 @@ All dependencies are managed through version catalogs in `gradle/libs.versions.t
 - **SharedPreferences**: 存储频繁变化的个人资料（用户名、签名）
 - 使用Repository模式抽象数据源
 
-### Compose状态管理
-- 用ViewModel持有登录/个人中心状态
-- 使用State Hoisting将状态提升到父级Composable
-- 利用Compose重组实现响应式UI
+### View 系统 UI 更新
+- 用 ViewModel + LiveData/StateFlow 持有 UI 状态
+- 通过 Observer 模式监听数据变化并更新 View
+- 使用 TextWatcher 监听输入框文本变化
 
 ## 知识卡片系统
 
