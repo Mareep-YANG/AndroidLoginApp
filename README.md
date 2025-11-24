@@ -115,15 +115,14 @@ app/
 
 本部分记录项目中使用AI Coding或Vibe Coding技术的情况，标明具体的应用场景和技术点。
 
-### 初始化阶段 (2025-01-24)
+### 初始化阶段 (2025-11-24)
 
 | 序号 | 项目部分 | 使用技术 | 描述 |
 |------|--------|--------|------|
 | 1 | README.md | AI Coding | 生成项目文档、功能需求说明、项目结构和技术栈梳理 |
 | 2 | CLAUDE.md | AI Coding | 更新项目指导文档，包括架构设计、实现清单和注意事项 |
-| 3 | AI_Learning系统 | AI Coding | 创建知识卡片库框架，包括README索引和标准模板 |
-| 4 | 知识卡片 - Compose基础 | Vibe Coding | 基于学习需求生成中文知识卡片，包含概念讲解和代码示例 |
-| 5 | 知识卡片 - Room数据库 | Vibe Coding | 基于登录认证需求生成中文知识卡片，涵盖Entity、DAO、Database设计 |
+| 3 | AI_Learning系统 | AI Coding | 创建知识卡片库框架、模板和索引 |
+| 4 | 知识卡片 - Activity和应用程序结构 | Vibe Coding | 讲解单Activity vs 多Activity架构、返回栈概念、现代Android设计趋势 |
 
 ## 许可证
 

@@ -11,7 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLoginApp">
-        <!-- MainActivity的注册信息 -->
+        <!--
+        MainActivity的注册信息
+        name表示Activity的类名，'.'表示前面package定义的包名，这个Activity完整类名就是cn.mareep.androidloginapp.MainActivity
+        exported = true 表示这个包可以被外部应用启动
+        <intent-filter>是意图过滤器，<action>和<category>组合告诉系统这个Activity是应用的主入口，应该出现在手机桌面的应用启动器里
+        -->
         <activity
             android:name=".MainActivity"
             android:exported="true"

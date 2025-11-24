@@ -16,6 +16,9 @@ import cn.mareep.androidloginapp.ui.theme.AndroidLoginAppTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // 把 layout xml 布局文件加载到 Activity 中
+        setContentView(R.layout.activity_main)
         enableEdgeToEdge()
         setContent {
             AndroidLoginAppTheme {

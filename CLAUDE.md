@@ -280,3 +280,6 @@ All dependencies are managed through version catalogs in `gradle/libs.versions.t
 1. 在README.md中添加: `| 序号 | LoginScreen | AI Coding | 实现登录UI、输入验证、数据库交互 |`
 2. 生成知识卡片: `07_用户认证与验证.md`（如果不存在）
 3. 在CLAUDE.md中确保项目结构和架构说明保持最新
+- README中的AI使用说明请严格按照你给我回答了什么来创建，不要创建还不存在的内容
+- 应该每次都阅读AI_Learning里面存在的知识卡片，如果用户提出的问题是之前的问题的延伸或者重合，则在原来的知识卡片的基础上进行修改，不要新建卡片
+- 知识卡片不需要过多的代码，重点给我讲解概念
